@@ -13,7 +13,7 @@ def upload_file():
         return "No selected file", 400
 
     # Read image in memory
-    npimg = np.fromstring(file.read(), np.uint8)
+    npimg = np.frombuffer(file.read(), np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
 
     # Perform face detection
